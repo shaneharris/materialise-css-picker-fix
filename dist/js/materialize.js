@@ -6600,7 +6600,7 @@ if (Vel) {
                     target.click();
                   }
             });
-          }, 100);
+          }, 300);
         }
 
         // Trigger the queued “open” events.
@@ -8997,7 +8997,7 @@ if (Vel) {
         }
       });
       raiseCallback(this.options.afterShow);
-    }, 100);
+    }, 300);
   };
   // Hide popover
   ClockPicker.prototype.hide = function () {
