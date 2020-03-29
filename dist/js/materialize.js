@@ -6534,7 +6534,9 @@ if (Vel) {
 
           // Pass focus to the root element’s jQuery object.
           // * Workaround for iOS8 to bring the picker’s root into view.
-          setTimeout(function () {
+          
+          clearTimeout(this.debounceTimeout);
+          this.debounceTimeout = setTimeout(function () {
             P.$root.eq(0).focus();
             // Bind the document events.
             $document.on('click.' + STATE.id + ' focusin.' + STATE.id, function (event) {
@@ -8919,7 +8921,8 @@ if (Vel) {
     if (this.isShown) {
       return;
     }
-    setTimeout(() => {
+    clearTimeout(this.debounceTimeout);
+    this.debounceTimeout = setTimeout(() => {
       raiseCallback(this.options.beforeShow);
       $(':input').each(function () {
         $(this).attr('tabindex', -1);
@@ -9005,6 +9008,7 @@ if (Vel) {
     this.input.removeClass('picker__input picker__input--active');
     this.popover.removeClass('picker--opened');
     $(document.body).css('overflow', 'visible');
+    $(document.body).css('overflow-y', 'visible');
     this.isShown = false;
     $(':input').each(function (index) {
       $(this).attr('tabindex', index + 1);
