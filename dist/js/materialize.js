@@ -8932,7 +8932,7 @@ if (Vel) {
       this.input.blur();
       this.popover.addClass('picker--opened');
       this.input.addClass('picker__input picker__input--active');
-      $(document.body).css('overflow', 'hidden');
+      //$(document.body).css('overflow', 'hidden');
       // Get the time
       var value = ((this.input.prop('value') || this.options['default'] || '') + '').split(':');
       if (this.options.twelvehour && !(typeof value[1] === 'undefined')) {
@@ -9007,8 +9007,7 @@ if (Vel) {
     raiseCallback(this.options.beforeHide);
     this.input.removeClass('picker__input picker__input--active');
     this.popover.removeClass('picker--opened');
-    $(document.body).css('overflow', 'visible');
-    $(document.body).css('overflow-y', 'visible');
+    //$(document.body).css('overflow-y', 'visible');
     this.isShown = false;
     $(':input').each(function (index) {
       $(this).attr('tabindex', index + 1);
