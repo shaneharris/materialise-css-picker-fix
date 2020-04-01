@@ -9007,7 +9007,7 @@ if (Vel) {
     raiseCallback(this.options.beforeHide);
     this.input.removeClass('picker__input picker__input--active');
     this.popover.removeClass('picker--opened');
-    $(document.body).css('overflow-y', 'scroll');
+    $(document.body).css('overflow-y', 'visible');
     this.isShown = false;
     $(':input').each(function (index) {
       $(this).attr('tabindex', index + 1);
